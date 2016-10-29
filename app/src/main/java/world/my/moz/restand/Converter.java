@@ -1,6 +1,9 @@
 package world.my.moz.restand;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 
 /**
  * Created by Shap on 29/10/2016.
@@ -10,14 +13,15 @@ public class Converter {
 
     public String GpioToJson(Gpio gpio) {
         Gson gson = new Gson();
-        String json = gson.toJson(gpio, gpio.getClass());
+        Type type = new TypeToken<Gpio>() {}.getType();
+        String json = gson.toJson(gpio, type);
         return json;
     }
 
     public Gpio JsonToGpio (String json) {
         Gson gson = new Gson();
-        Gpio gpio = null;
-        gpio = gson.fromJson(json, gpio.getClass());
+        Type type = new TypeToken<Gpio>() {}.getType();
+        Gpio gpio = gson.fromJson(json, type);
         return gpio;
     }
 
