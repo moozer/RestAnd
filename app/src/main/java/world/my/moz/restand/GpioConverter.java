@@ -9,7 +9,7 @@ import java.lang.reflect.Type;
  * Created by Shap on 29/10/2016.
  */
 
-public class Converter {
+public class GpioConverter {
 
     public String GpioToJson(Gpio gpio) {
         Gson gson = new Gson();
@@ -26,3 +26,4 @@ public class Converter {
     }
 
 }
+
