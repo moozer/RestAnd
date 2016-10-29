@@ -19,12 +19,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvServerInput;
     TextView tvPortInput;
     TextView tvTestResult;
+    TextView tvScroll;
 
     private void retrieveIds() {
         btnTest = (Button) findViewById(R.id.btnTest);
         tvServerInput = (TextView) findViewById(R.id.tvServerInput);
         tvPortInput = (TextView) findViewById(R.id.tvPortInput);
         tvTestResult = (TextView) findViewById(R.id.tvTestResult);
+        tvScroll = (TextView) findViewById(R.id.tvScroll);
     }
 
 
@@ -43,9 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         String url = "http://" + tvServerInput.getText() + ":" + tvPortInput.getText() + "/";
-
-        String response ="(working)";
-        tvTestResult.setText("" + response );
+        tvTestResult.setText("(working)");
 
         new connectClass().execute(url);
 
@@ -57,7 +57,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            tvTestResult.setText("" + response );
+
+            if( response != null ) {
+                tvScroll.setText("" + response);
+                tvTestResult.setText("(ok)");
+            }
+            else {
+                tvScroll.setText("");
+                tvTestResult.setText("(error)");
+            }
         }
 
         @Override
@@ -66,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 response = run( url[0] );
             } catch (IOException e) {
-                response = "(error)";
+                response = null;
                 e.printStackTrace();
             }
 
