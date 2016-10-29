@@ -37,8 +37,6 @@
         android:id="@+id/tvPortInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-
         android:inputType="numberDecimal"
         android:text="5000" />
 
@@ -52,7 +50,6 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-
             android:text="Test" />
 
         <TextView
@@ -64,35 +61,62 @@
             android:text="(untested)" />
     </LinearLayout>
 
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnA0Set"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Set A0"/>
+
+        <EditText
+            android:id="@+id/tvA0Input"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnGetAll"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="Get values"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvA0Value"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:text="(no data)"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
 
         android:layout_height="100dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvScroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="(no data yet)" />
 
-            <TextView
-                android:id="@+id/tvScroll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-        </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Set A0" />
 
-    <Button
-        android:id="@+id/btnGetAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Get values" />
 </LinearLayout>
