@@ -67,7 +67,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btnA0Set"
+            android:id="@+id/btnSetA0"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -89,10 +89,10 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btnGetAll"
+            android:id="@+id/btnGetA0"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:text="Get values"
+            android:text="Get A0"
             android:layout_height="wrap_content" />
 
         <TextView
