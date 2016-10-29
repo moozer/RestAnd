@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -11,90 +12,87 @@
     tools:context="world.my.moz.restand.MainActivity">
 
     <TextView
-        android:text="Port"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvLabelServer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvLabelServer"
-        android:layout_marginTop="50dp"
-        android:id="@+id/tvLabelPort" />
+        android:text="Server" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/tvServerInput"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="10.140.68.105"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/tvLabelPort"
-        android:layout_toEndOf="@+id/tvLabelPort"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp"
-        android:id="@+id/tvServerInput" />
+        android:text="10.140.68.105" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvLabelPort"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Server"
-        android:id="@+id/tvLabelServer"
-        android:layout_alignBaseline="@+id/tvServerInput"
-        android:layout_alignBottom="@+id/tvServerInput"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/tvLabelServer"
+
+        android:text="Port" />
+
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_below="@+id/tvServerInput"
-        android:layout_alignLeft="@+id/tvServerInput"
-        android:layout_alignStart="@+id/tvServerInput"
-        android:layout_marginTop="26dp"
         android:id="@+id/tvPortInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:inputType="numberDecimal"
         android:text="5000" />
 
-    <Button
-        android:text="Test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvPortInput"
-        android:layout_toRightOf="@+id/tvLabelServer"
-        android:layout_toEndOf="@+id/tvLabelServer"
-        android:layout_marginTop="40dp"
-        android:id="@+id/btnTest" />
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:text="(untested)"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnTest"
-        android:layout_alignRight="@+id/tvPortInput"
-        android:layout_alignEnd="@+id/tvPortInput"
-        android:layout_marginRight="37dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginTop="14dp"
-        android:id="@+id/tvTestResult" />
+        <Button
+            android:id="@+id/btnTest"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="Test" />
+
+        <TextView
+            android:id="@+id/tvTestResult"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="(untested)" />
+    </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/btnTest"
-        android:layout_toStartOf="@+id/tvTestResult"
-        android:layout_marginTop="33dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+
+        android:layout_height="100dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
-                android:text="TextView"
+                android:id="@+id/tvScroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvScroll" />
+                android:text="TextView" />
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set A0" />
+
+    <Button
+        android:id="@+id/btnGetAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Get values" />
+</LinearLayout>
