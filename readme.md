@@ -16,6 +16,8 @@ To use
 
 4. Install an emulator
 
+5. Load the project and run it
+
 5. Type in the correct IP address
 
     It might be `localhost` or the itnerface IP address
